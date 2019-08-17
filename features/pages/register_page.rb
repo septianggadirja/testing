@@ -10,11 +10,32 @@ class RegisterPage < SitePrism::Page
   element :field_bod_day, '#bod-tanggal'
   element :field_bod_month, '#bod-bulan'
   elements :dropdown_date_option, :xpath, '//option'
+  element :dropdown_september, :xpath, '//option[contains(text(),"Sep")]'
   element :field_bod_year, '#bod-tahun'
   element :btn_next, '.fa-chevron-circle-right'
-  element :popup_message, '#swal2-title'
-  elements :btn_profile_option, '.btn-outline-light'
+  element :error_message_name, '#register-name-error'
+  element :error_message_email, '#register-email-error'
+  element :error_message_password, '#register-password-error'
+  element :popup_message_title, '#swal2-title'
+  element :popup_message_content, '#swal2-content'
+  element :btn_profile_option, '.btn-outline-light'
   element :btn_close_popup, :xpath, '//button[contains(text(),"OK")]'
   element :btn_finish_register, '#btnRegister'
 
+  def submit_credential
+    current_time = (Time.new).strftime('%d%m%Y_%H%M%S')
+    sleep 2
+    wait_until_field_name_visible
+    field_name.click.set 'New_' + current_time
+    field_email.set 'New_' + current_time + '@gmail.com'
+    field_password.set 'b3lajarsehatq'
+  end
+
+  def submit_dob
+    field_bod_day.click
+    dropdown_date_option[15].click
+    field_bod_month.click
+    dropdown_september.click
+    field_bod_year.set '1994'
+  end
 end
