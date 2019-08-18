@@ -22,16 +22,7 @@ Scenario: ...
       element :btn_close_popup, :xpath, '//button[contains(text(),"OK")]'
     end
 ```
-...then the following methods are available:
-```
-@home.search_field
-@home.has_search_field?
-@home.has_no_search_field?
-@home.wait_for_search_field
-@home.wait_for_no_search_field
-@home.wait_until_search_field_visible
-@home.wait_until_search_field_invisible
-```
+
 ## Creating step definitions files
 ```ruby
 Then /^the account page is displayed$/ do
