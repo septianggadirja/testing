@@ -38,4 +38,11 @@ class RegisterPage < SitePrism::Page
     dropdown_september.click
     field_bod_year.set '1994'
   end
+
+  def submit_personality_1(args = {})
+    btn_profile_option(text: (args[:hoby1])).click if args.key?(:hoby1)
+    btn_profile_option(text: (args[:hoby2])).click if args.key?(:hoby2)
+    btn_profile_option(text: (args[:hoby3])).click if args.key?(:hoby3)
+    btn_profile_option(text: (args[:hoby4])).click if args.key?(:hoby4)
+  end
 end

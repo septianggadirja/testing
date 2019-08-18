@@ -28,6 +28,8 @@ Then('user should get error message for lack of data') do
 end
 
 When('user register with invalid data') do
+  @pages.register_page.submit_dob
+  @pages.register_page.wait_until_field_name_visible
   @pages.register_page.field_name. set 'a'
   @pages.register_page.field_email. set 'a'
   @pages.register_page.field_password. set 'a'

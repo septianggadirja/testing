@@ -4,10 +4,19 @@ Scenario: Failed to register with invalid credential
   Given user is on register page
   When user register with null data
   Then user should get error popup message
+
+Scenario: Failed to register with dob only
+  Given user is on register page
   When user register with dob data only
   Then user should get error message for lack of data
+
+Scenario: Failed to register with invalid data
+  Given user is on register page
   When user register with invalid data
   Then user should get error message for invalid data
+
+Scenario: Failed to register with registered email
+  Given user is on register page
   When user register with registered email account
   Then user should get error popup message
 
