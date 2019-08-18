@@ -5,7 +5,6 @@ end
 
 When('user login with null data') do
   @pages.login_page.wait_until_btn_login_visible
-  sleep 2
   @pages.login_page.btn_login.click
   expect(@pages.login_page.error_message_email).to have_text('This field is required.')
   expect(@pages.login_page.error_message_password).to have_text('This field is required.')
