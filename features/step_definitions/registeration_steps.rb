@@ -69,6 +69,7 @@ When('user choose {string} {string} {string} {string} as personality_1') do |dat
   @pages.register_page.submit_credential
   @pages.register_page.submit_dob
   @pages.register_page.btn_next.click
+  sleep 2
   @pages.register_page.btn_profile_option(text: data1).click
   @pages.register_page.btn_profile_option(text: data2).click
   @pages.register_page.btn_profile_option(text: data3).click
@@ -89,6 +90,7 @@ When('user choose {string} {string} as personality_2') do |data1, data2|
 end
 
 When('user choose {string} {string} {string} as personality_2') do |data1, data2, data3|
+  sleep 2
   @pages.register_page.btn_profile_option(text: data1).click
   @pages.register_page.btn_profile_option(text: data2).click
   @pages.register_page.btn_profile_option(text: data3).click
@@ -96,5 +98,6 @@ When('user choose {string} {string} {string} as personality_2') do |data1, data2
 end
 
 Then('user should success to register') do
+  sleep 2
   expect(@pages.home_page.btn_profile).to have_text 'Hi,'
 end

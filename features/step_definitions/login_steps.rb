@@ -44,5 +44,4 @@ end
 
 Then('user should be redirected to home page') do
   expect(@pages.home_page.btn_profile).to have_text 'Hi,'
-  sleep 5
 end

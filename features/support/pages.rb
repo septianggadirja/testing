@@ -11,4 +11,7 @@ class Pages
     @home_page ||= HomePage.new
   end
 
+  def faskes_page
+    @faskes_page ||= FaskesPage.new
+  end
 end
